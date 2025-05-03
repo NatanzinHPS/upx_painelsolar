@@ -244,18 +244,18 @@ function TelaProjeto() {
     : [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-400 to-yellow-200 items-center p-8">
-      <div className="p-6 max-w-7xl mx-auto bg-gray-50 rounded-lg shadow">
-        <h1 className="text-2xl font-bold text-center mb-6 text-blue-400">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 to-purple-800 flex flex-col pt-16 p-8">
+      <div className="p-6 max-w-7xl mx-auto w-full bg-indigo-100/10 backdrop-blur-md rounded-lg shadow">
+        <h1 className="text-2xl font-bold text-center mb-6 text-yellow-300">
           Visualizador de Painéis Solares
         </h1>
 
         <div className="mb-6">
-          <label className="block text-gray-700 mb-2 font-medium">
+          <label className="block text-yellow-200 mb-2 font-medium">
             Selecione o tipo de painel:
           </label>
           <select
-            className="w-full p-2 border border-gray-300 rounded-md bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full p-2 border border-purple-400 rounded-md bg-indigo-900/70 text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
             onChange={handleChangePainel}
             defaultValue=""
           >
@@ -271,8 +271,8 @@ function TelaProjeto() {
         </div>
 
         {!painelSelecionado && (
-          <div className="bg-white p-4 rounded-lg shadow mb-6">
-            <h2 className="text-xl font-semibold mb-4 text-center">
+          <div className="bg-indigo-900/40 p-4 rounded-lg shadow mb-6">
+            <h2 className="text-xl font-semibold mb-4 text-center text-yellow-300">
               Comparativo de Eficiência de Painéis
             </h2>
             <div className="h-80">
@@ -281,99 +281,105 @@ function TelaProjeto() {
                   data={dadosGrafico}
                   margin={{ top: 20, right: 30, left: 20, bottom: 70 }}
                 >
-                  <CartesianGrid strokeDasharray="3 3" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#6366f1" />
                   <XAxis
                     dataKey="nome"
                     angle={-45}
                     textAnchor="end"
                     height={70}
+                    tick={{ fill: '#e0e7ff' }}
                   />
                   <YAxis
                     label={{
                       value: "Eficiência (%)",
                       angle: -90,
                       position: "insideLeft",
+                      fill: '#e0e7ff'
                     }}
+                    tick={{ fill: '#e0e7ff' }}
                   />
-                  <Tooltip formatter={(value) => [`${value}%`, "Eficiência"]} />
+                  <Tooltip 
+                    formatter={(value) => [`${value}%`, "Eficiência"]}
+                    contentStyle={{ backgroundColor: '#312e81', borderColor: '#4f46e5', color: '#e0e7ff' }}
+                  />
                   <Bar
                     dataKey="eficiencia"
-                    fill="#3182CE"
+                    fill="#FFCC00"
                     name="Eficiência (%)"
                   />
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <p className="text-center text-gray-600 mt-4">
+            <p className="text-center text-purple-200 mt-4">
               Selecione um tipo de painel para ver detalhes específicos
             </p>
           </div>
         )}
 
-        {painelSelecionado && (
+{painelSelecionado && (
           <>
-            <div className="bg-white p-4 rounded-lg shadow mb-6">
-              <h2 className="text-xl font-semibold mb-4 text-center text-blue-700">
+            <div className="bg-indigo-900/40 p-6 rounded-lg shadow-xl mb-6">
+              <h2 className="text-2xl font-semibold mb-4 text-center text-yellow-300">
                 {painelSelecionado.tipo}
               </h2>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div>
-                  <div className="bg-blue-50 p-4 rounded-lg mb-4">
-                    <h3 className="font-medium text-blue-800 mb-2">
+                  <div className="bg-indigo-800/50 p-4 rounded-lg mb-4 border border-purple-500">
+                    <h3 className="font-medium text-yellow-200 mb-2">
                       Especificações Técnicas
                     </h3>
                     <div className="grid grid-cols-2 gap-2">
                       <p>
-                        <span className="font-semibold">Eficiência:</span>{" "}
-                        {painelSelecionado.eficiencia}%
+                        <span className="font-semibold text-purple-200">Eficiência:</span>{" "}
+                        <span className="text-white">{painelSelecionado.eficiencia}%</span>
                       </p>
                       <p>
-                        <span className="font-semibold">Custo:</span>{" "}
-                        {painelSelecionado.custo}
+                        <span className="font-semibold text-purple-200">Custo:</span>{" "}
+                        <span className="text-white">{painelSelecionado.custo}</span>
                       </p>
                       <p>
-                        <span className="font-semibold">Vida útil:</span>{" "}
-                        {painelSelecionado.vidaUtil}
+                        <span className="font-semibold text-purple-200">Vida útil:</span>{" "}
+                        <span className="text-white">{painelSelecionado.vidaUtil}</span>
                       </p>
                       <p>
-                        <span className="font-semibold">
+                        <span className="font-semibold text-purple-200">
                           Coef. temperatura:
                         </span>{" "}
-                        {painelSelecionado.temperaturaCoef}
+                        <span className="text-white">{painelSelecionado.temperaturaCoef}</span>
                       </p>
                     </div>
                   </div>
 
-                  <div className="bg-green-50 p-4 rounded-lg">
-                    <h3 className="font-medium text-green-800 mb-2">
+                  <div className="bg-purple-800/40 p-4 rounded-lg border border-yellow-300/50">
+                    <h3 className="font-medium text-yellow-200 mb-2">
                       Geração de Energia
                     </h3>
                     <div className="grid grid-cols-2 gap-2">
                       <div>
-                        <h4 className="text-sm font-medium text-gray-600">
+                        <h4 className="text-sm font-medium text-purple-200">
                           Irradiação 4,5 kWh/m²
                         </h4>
                         <p>
-                          <span className="font-semibold">Diária:</span>{" "}
-                          {painelSelecionado.geracaoDiaria45} kWh
+                          <span className="font-semibold text-indigo-200">Diária:</span>{" "}
+                          <span className="text-white">{painelSelecionado.geracaoDiaria45} kWh</span>
                         </p>
                         <p>
-                          <span className="font-semibold">Mensal:</span>{" "}
-                          {painelSelecionado.geracaoMensal45} kWh
+                          <span className="font-semibold text-indigo-200">Mensal:</span>{" "}
+                          <span className="text-white">{painelSelecionado.geracaoMensal45} kWh</span>
                         </p>
                       </div>
                       <div>
-                        <h4 className="text-sm font-medium text-gray-600">
+                        <h4 className="text-sm font-medium text-purple-200">
                           Irradiação 6,5 kWh/m²
                         </h4>
                         <p>
-                          <span className="font-semibold">Diária:</span>{" "}
-                          {painelSelecionado.geracaoDiaria65} kWh
+                          <span className="font-semibold text-indigo-200">Diária:</span>{" "}
+                          <span className="text-white">{painelSelecionado.geracaoDiaria65} kWh</span>
                         </p>
                         <p>
-                          <span className="font-semibold">Mensal:</span>{" "}
-                          {painelSelecionado.geracaoMensal65} kWh
+                          <span className="font-semibold text-indigo-200">Mensal:</span>{" "}
+                          <span className="text-white">{painelSelecionado.geracaoMensal65} kWh</span>
                         </p>
                       </div>
                     </div>
@@ -381,7 +387,7 @@ function TelaProjeto() {
                 </div>
 
                 <div className="h-64">
-                  <h3 className="font-medium text-purple-800 mb-2">
+                  <h3 className="font-medium text-yellow-200 mb-2">
                     Geração de Energia
                   </h3>
                   <ResponsiveContainer width="100%" height="90%">
@@ -389,19 +395,19 @@ function TelaProjeto() {
                       data={dadosGraficoSelecionado}
                       margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                     >
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="nome" />
-                      <YAxis />
-                      <Tooltip />
-                      <Legend />
+                      <CartesianGrid strokeDasharray="3 3" stroke="#6366f1" />
+                      <XAxis dataKey="nome" tick={{ fill: '#e0e7ff' }} />
+                      <YAxis tick={{ fill: '#e0e7ff' }} />
+                      <Tooltip contentStyle={{ backgroundColor: '#312e81', borderColor: '#4f46e5', color: '#e0e7ff' }} />
+                      <Legend wrapperStyle={{ color: '#e0e7ff' }} />
                       <Bar
                         dataKey="Geração Diária"
-                        fill="#82ca9d"
+                        fill="#FFCC00"
                         name="Geração Diária (kWh)"
                       />
                       <Bar
                         dataKey="Geração Mensal"
-                        fill="#8884d8"
+                        fill="#FF9933"
                         name="Geração Mensal (kWh/dia)"
                       />
                     </BarChart>
@@ -410,26 +416,26 @@ function TelaProjeto() {
               </div>
 
               <div className="mt-6">
-                <h3 className="font-medium text-gray-800 mb-2">
+                <h3 className="font-medium text-yellow-200 mb-2">
                   Características
                 </h3>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   <div>
                     <p>
-                      <span className="font-semibold">Aplicações:</span>{" "}
-                      {painelSelecionado.aplicacoes}
+                      <span className="font-semibold text-orange-200">Aplicações:</span>{" "}
+                      <span className="text-white">{painelSelecionado.aplicacoes}</span>
                     </p>
                     <p>
-                      <span className="font-semibold">Vantagens:</span>{" "}
-                      {painelSelecionado.vantagens}
+                      <span className="font-semibold text-orange-200">Vantagens:</span>{" "}
+                      <span className="text-white">{painelSelecionado.vantagens}</span>
                     </p>
                     <p>
-                      <span className="font-semibold">Desvantagens:</span>{" "}
-                      {painelSelecionado.desvantagens}
+                      <span className="font-semibold text-orange-200">Desvantagens:</span>{" "}
+                      <span className="text-white">{painelSelecionado.desvantagens}</span>
                     </p>
                   </div>
-                  <div className="bg-gray-100 p-3 rounded">
-                    <p className="italic text-gray-700">
+                  <div className="bg-indigo-800/60 p-4 rounded border border-purple-500">
+                    <p className="italic text-purple-100">
                       {painelSelecionado.descricao}
                     </p>
                   </div>
@@ -437,8 +443,8 @@ function TelaProjeto() {
               </div>
             </div>
 
-            <div className="bg-white p-4 rounded-lg shadow">
-              <h3 className="font-medium text-blue-800 mb-4">
+            <div className="bg-indigo-900/40 p-6 rounded-lg shadow-xl">
+              <h3 className="font-medium text-yellow-300 mb-4">
                 Comparação com outros painéis
               </h3>
               <div className="h-80">
@@ -447,30 +453,33 @@ function TelaProjeto() {
                     data={dadosGrafico}
                     margin={{ top: 20, right: 30, left: 20, bottom: 70 }}
                   >
-                    <CartesianGrid strokeDasharray="3 3" />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#6366f1" />
                     <XAxis
                       dataKey="nome"
                       angle={-45}
                       textAnchor="end"
                       height={70}
+                      tick={{ fill: '#e0e7ff' }}
                     />
                     <YAxis
                       label={{
                         value: "Geração Mensal (kWh)",
                         angle: -90,
                         position: "insideLeft",
+                        fill: '#e0e7ff'
                       }}
+                      tick={{ fill: '#e0e7ff' }}
                     />
-                    <Tooltip />
-                    <Legend />
+                    <Tooltip contentStyle={{ backgroundColor: '#312e81', borderColor: '#4f46e5', color: '#e0e7ff' }} />
+                    <Legend wrapperStyle={{ color: '#e0e7ff' }} />
                     <Bar
                       dataKey="geracao45"
-                      fill="#3182CE"
+                      fill="#FFCC00"
                       name="Geração Mensal 4,5 kWh/m²"
                     />
                     <Bar
                       dataKey="geracao65"
-                      fill="#2B6CB0"
+                      fill="#FF9933"
                       name="Geração Mensal 6,5 kWh/m²"
                     />
                   </BarChart>

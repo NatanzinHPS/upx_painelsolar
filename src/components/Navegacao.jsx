@@ -1,6 +1,6 @@
 function Navegacao() {
   return (
-<nav class="fixed bg-yellow-400 shadow-md w-full">
+<nav class="sticky top-0 bg-yellow-400 shadow-md w-full">
   <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
     <a href="/" class="flex items-center space-x-2">
       <span class="text-xl font-semibold text-gray-800 hover:text-black transition-colors duration-300">RenovaEnergy</span>
@@ -8,6 +8,9 @@ function Navegacao() {
     <ul class="flex space-x-8 text-gray-700 font-medium">
       <li>
         <a href="/projeto" class="hover:text-black transition-colors duration-300">Projeto</a>
+      </li>
+      <li>
+        <a href="/saibaMais" class="hover:text-black transition-colors duration-300">Saiba Mais</a>
       </li>
       <li>
         <a href="/sobre" class="hover:text-black transition-colors duration-300">Sobre</a>
