@@ -75,7 +75,7 @@ function TelaInicial() {
             onClick={navegarParaDashboard}
             className="bg-yellow-400 hover:bg-yellow-300 text-indigo-900 font-bold py-3 px-8 rounded-full shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center mx-auto ring-2 ring-orange-300"
           >
-            <span className="mr-2">Explorar Dashboard</span>
+            <span className="mr-2">Explorar Painéis</span>
             <ArrowRight size={20} />
           </button>
         </div>

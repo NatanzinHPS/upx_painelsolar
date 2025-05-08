@@ -7,7 +7,7 @@ function Navegacao() {
     </a>
     <ul class="flex space-x-8 text-gray-700 font-medium">
       <li>
-        <a href="/projeto" class="hover:text-black transition-colors duration-300">Projeto</a>
+        <a href="/projeto" class="hover:text-black transition-colors duration-300">Painéis</a>
       </li>
       <li>
         <a href="/saibaMais" class="hover:text-black transition-colors duration-300">Saiba Mais</a>

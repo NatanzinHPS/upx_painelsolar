@@ -245,7 +245,7 @@ function TelaProjeto() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 to-purple-800 flex flex-col pt-16 p-8">
-      <div className="p-6 max-w-7xl mx-auto w-full bg-indigo-100/10 backdrop-blur-md rounded-lg shadow">
+      <div className="p-6 max-w-7xl mx-auto w-full bg-indigo-100/10 rounded-lg shadow">
         <h1 className="text-2xl font-bold text-center mb-6 text-yellow-300">
           Visualizador de Painéis Solares
         </h1>
