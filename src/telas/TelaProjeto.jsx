@@ -287,20 +287,24 @@ function TelaProjeto() {
                     angle={-45}
                     textAnchor="end"
                     height={70}
-                    tick={{ fill: '#e0e7ff' }}
+                    tick={{ fill: "#e0e7ff" }}
                   />
                   <YAxis
                     label={{
                       value: "Eficiência (%)",
                       angle: -90,
                       position: "insideLeft",
-                      fill: '#e0e7ff'
+                      fill: "#e0e7ff",
                     }}
-                    tick={{ fill: '#e0e7ff' }}
+                    tick={{ fill: "#e0e7ff" }}
                   />
-                  <Tooltip 
+                  <Tooltip
                     formatter={(value) => [`${value}%`, "Eficiência"]}
-                    contentStyle={{ backgroundColor: '#312e81', borderColor: '#4f46e5', color: '#e0e7ff' }}
+                    contentStyle={{
+                      backgroundColor: "#312e81",
+                      borderColor: "#4f46e5",
+                      color: "#e0e7ff",
+                    }}
                   />
                   <Bar
                     dataKey="eficiencia"
@@ -316,7 +320,7 @@ function TelaProjeto() {
           </div>
         )}
 
-{painelSelecionado && (
+        {painelSelecionado && (
           <>
             <div className="bg-indigo-900/40 p-6 rounded-lg shadow-xl mb-6">
               <h2 className="text-2xl font-semibold mb-4 text-center text-yellow-300">
@@ -331,22 +335,36 @@ function TelaProjeto() {
                     </h3>
                     <div className="grid grid-cols-2 gap-2">
                       <p>
-                        <span className="font-semibold text-purple-200">Eficiência:</span>{" "}
-                        <span className="text-white">{painelSelecionado.eficiencia}%</span>
+                        <span className="font-semibold text-purple-200">
+                          Eficiência:
+                        </span>{" "}
+                        <span className="text-white">
+                          {painelSelecionado.eficiencia}%
+                        </span>
                       </p>
                       <p>
-                        <span className="font-semibold text-purple-200">Custo:</span>{" "}
-                        <span className="text-white">{painelSelecionado.custo}</span>
+                        <span className="font-semibold text-purple-200">
+                          Custo:
+                        </span>{" "}
+                        <span className="text-white">
+                          {painelSelecionado.custo}
+                        </span>
                       </p>
                       <p>
-                        <span className="font-semibold text-purple-200">Vida útil:</span>{" "}
-                        <span className="text-white">{painelSelecionado.vidaUtil}</span>
+                        <span className="font-semibold text-purple-200">
+                          Vida útil:
+                        </span>{" "}
+                        <span className="text-white">
+                          {painelSelecionado.vidaUtil}
+                        </span>
                       </p>
                       <p>
                         <span className="font-semibold text-purple-200">
                           Coef. temperatura:
                         </span>{" "}
-                        <span className="text-white">{painelSelecionado.temperaturaCoef}</span>
+                        <span className="text-white">
+                          {painelSelecionado.temperaturaCoef}
+                        </span>
                       </p>
                     </div>
                   </div>
@@ -361,12 +379,20 @@ function TelaProjeto() {
                           Irradiação 4,5 kWh/m²
                         </h4>
                         <p>
-                          <span className="font-semibold text-indigo-200">Diária:</span>{" "}
-                          <span className="text-white">{painelSelecionado.geracaoDiaria45} kWh</span>
+                          <span className="font-semibold text-indigo-200">
+                            Diária:
+                          </span>{" "}
+                          <span className="text-white">
+                            {painelSelecionado.geracaoDiaria45} kWh
+                          </span>
                         </p>
                         <p>
-                          <span className="font-semibold text-indigo-200">Mensal:</span>{" "}
-                          <span className="text-white">{painelSelecionado.geracaoMensal45} kWh</span>
+                          <span className="font-semibold text-indigo-200">
+                            Mensal:
+                          </span>{" "}
+                          <span className="text-white">
+                            {painelSelecionado.geracaoMensal45} kWh
+                          </span>
                         </p>
                       </div>
                       <div>
@@ -374,12 +400,20 @@ function TelaProjeto() {
                           Irradiação 6,5 kWh/m²
                         </h4>
                         <p>
-                          <span className="font-semibold text-indigo-200">Diária:</span>{" "}
-                          <span className="text-white">{painelSelecionado.geracaoDiaria65} kWh</span>
+                          <span className="font-semibold text-indigo-200">
+                            Diária:
+                          </span>{" "}
+                          <span className="text-white">
+                            {painelSelecionado.geracaoDiaria65} kWh
+                          </span>
                         </p>
                         <p>
-                          <span className="font-semibold text-indigo-200">Mensal:</span>{" "}
-                          <span className="text-white">{painelSelecionado.geracaoMensal65} kWh</span>
+                          <span className="font-semibold text-indigo-200">
+                            Mensal:
+                          </span>{" "}
+                          <span className="text-white">
+                            {painelSelecionado.geracaoMensal65} kWh
+                          </span>
                         </p>
                       </div>
                     </div>
@@ -396,10 +430,16 @@ function TelaProjeto() {
                       margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                     >
                       <CartesianGrid strokeDasharray="3 3" stroke="#6366f1" />
-                      <XAxis dataKey="nome" tick={{ fill: '#e0e7ff' }} />
-                      <YAxis tick={{ fill: '#e0e7ff' }} />
-                      <Tooltip contentStyle={{ backgroundColor: '#312e81', borderColor: '#4f46e5', color: '#e0e7ff' }} />
-                      <Legend wrapperStyle={{ color: '#e0e7ff' }} />
+                      <XAxis dataKey="nome" tick={{ fill: "#e0e7ff" }} />
+                      <YAxis tick={{ fill: "#e0e7ff" }} />
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: "#312e81",
+                          borderColor: "#4f46e5",
+                          color: "#e0e7ff",
+                        }}
+                      />
+                      <Legend wrapperStyle={{ color: "#e0e7ff" }} />
                       <Bar
                         dataKey="Geração Diária"
                         fill="#FFCC00"
@@ -422,16 +462,28 @@ function TelaProjeto() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   <div>
                     <p>
-                      <span className="font-semibold text-orange-200">Aplicações:</span>{" "}
-                      <span className="text-white">{painelSelecionado.aplicacoes}</span>
+                      <span className="font-semibold text-orange-200">
+                        Aplicações:
+                      </span>{" "}
+                      <span className="text-white">
+                        {painelSelecionado.aplicacoes}
+                      </span>
                     </p>
                     <p>
-                      <span className="font-semibold text-orange-200">Vantagens:</span>{" "}
-                      <span className="text-white">{painelSelecionado.vantagens}</span>
+                      <span className="font-semibold text-orange-200">
+                        Vantagens:
+                      </span>{" "}
+                      <span className="text-white">
+                        {painelSelecionado.vantagens}
+                      </span>
                     </p>
                     <p>
-                      <span className="font-semibold text-orange-200">Desvantagens:</span>{" "}
-                      <span className="text-white">{painelSelecionado.desvantagens}</span>
+                      <span className="font-semibold text-orange-200">
+                        Desvantagens:
+                      </span>{" "}
+                      <span className="text-white">
+                        {painelSelecionado.desvantagens}
+                      </span>
                     </p>
                   </div>
                   <div className="bg-indigo-800/60 p-4 rounded border border-purple-500">
@@ -459,19 +511,25 @@ function TelaProjeto() {
                       angle={-45}
                       textAnchor="end"
                       height={70}
-                      tick={{ fill: '#e0e7ff' }}
+                      tick={{ fill: "#e0e7ff" }}
                     />
                     <YAxis
                       label={{
                         value: "Geração Mensal (kWh)",
                         angle: -90,
                         position: "insideLeft",
-                        fill: '#e0e7ff'
+                        fill: "#e0e7ff",
                       }}
-                      tick={{ fill: '#e0e7ff' }}
+                      tick={{ fill: "#e0e7ff" }}
                     />
-                    <Tooltip contentStyle={{ backgroundColor: '#312e81', borderColor: '#4f46e5', color: '#e0e7ff' }} />
-                    <Legend wrapperStyle={{ color: '#e0e7ff' }} />
+                    <Tooltip
+                      contentStyle={{
+                        backgroundColor: "#312e81",
+                        borderColor: "#4f46e5",
+                        color: "#e0e7ff",
+                      }}
+                    />
+                    <Legend wrapperStyle={{ color: "#e0e7ff" }} />
                     <Bar
                       dataKey="geracao45"
                       fill="#FFCC00"

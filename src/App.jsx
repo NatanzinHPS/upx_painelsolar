@@ -5,6 +5,7 @@ import TelaInicial from "./telas/TelaInicial";
 import TelaProjeto from "./telas/TelaProjeto";
 import TelaSaibaMais from "./telas/TelaSaibaMais";
 import TelaSobre from "./telas/TelaSobre";
+import TelaFuncionalidade from "./telas/TelaFuncionalidade";
 
 function Layout() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="projeto" element={<TelaProjeto />} />
         <Route path="saibaMais" element={<TelaSaibaMais />} />
         <Route path="sobre" element={<TelaSobre />} />
+        <Route path="funcionalidade" element={<TelaFuncionalidade />}/>
       </Route>
     </Routes>
   </BrowserRouter>
