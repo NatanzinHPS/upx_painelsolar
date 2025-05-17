@@ -233,12 +233,12 @@ function TelaProjeto() {
         {
           nome: "4,5 kWh/m²",
           "Geração Diária": painelSelecionado.geracaoDiaria45,
-          "Geração Mensal": painelSelecionado.geracaoMensal45 / 30,
+          "Geração Mensal": painelSelecionado.geracaoMensal45,
         },
         {
           nome: "6,5 kWh/m²",
           "Geração Diária": painelSelecionado.geracaoDiaria65,
-          "Geração Mensal": painelSelecionado.geracaoMensal65 / 30,
+          "Geração Mensal": painelSelecionado.geracaoMensal65,
         },
       ]
     : [];
@@ -448,7 +448,7 @@ function TelaProjeto() {
                       <Bar
                         dataKey="Geração Mensal"
                         fill="#FF9933"
-                        name="Geração Mensal (kWh/dia)"
+                        name="Geração Mensal (kWh)"
                       />
                     </BarChart>
                   </ResponsiveContainer>

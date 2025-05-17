@@ -116,7 +116,7 @@ function TelaSobre() {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 transform hover:scale-105"
+                className="relative z-10 rounded-lg overflow-hidden shadow-lg transition-all duration-300 transform hover:scale-105"
                 style={{
                   backgroundColor:
                     hoveredMember === index ? "#6633CC" : "white",

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Navegacao() {
   return (
-    <nav className="sticky top-0 bg-yellow-400 shadow-md w-full">
+    <nav className="sticky top-0 z-50 bg-yellow-400 shadow-md w-full">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4">
         <Link to="/" className="flex items-center space-x-2">
           <span className="text-xl font-semibold text-gray-800 hover:text-black transition-colors duration-300">
