@@ -1,6 +1,6 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { HashRouter, Routes, Route, Outlet } from "react-router-dom";
 import Navegacao from "./components/Navegacao";
-import Footer from './components/Footer'
+import Footer from "./components/Footer";
 import TelaInicial from "./telas/TelaInicial";
 import TelaProjeto from "./telas/TelaProjeto";
 import TelaSaibaMais from "./telas/TelaSaibaMais";
@@ -13,7 +13,7 @@ function Layout() {
       <Navegacao />
       <main>
         <Outlet />
-      </main> 
+      </main>
       <Footer />
     </>
   );
@@ -21,17 +21,17 @@ function Layout() {
 
 function App() {
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<TelaInicial />} />
-        <Route path="projeto" element={<TelaProjeto />} />
-        <Route path="saibaMais" element={<TelaSaibaMais />} />
-        <Route path="sobre" element={<TelaSobre />} />
-        <Route path="funcionalidade" element={<TelaFuncionalidade />}/>
-      </Route>
-    </Routes>
-  </BrowserRouter>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<TelaInicial />} />
+          <Route path="projeto" element={<TelaProjeto />} />
+          <Route path="saibaMais" element={<TelaSaibaMais />} />
+          <Route path="sobre" element={<TelaSobre />} />
+          <Route path="funcionalidade" element={<TelaFuncionalidade />} />
+        </Route>
+      </Routes>
+    </HashRouter>
   );
 }
 
