@@ -98,18 +98,19 @@ export default function CalculadoraSolar() {
     const geracaoMensal = geracaoDiaria * 30;
     const geracaoAnual = geracaoDiaria * 365;
     const coberturaMensal = (geracaoMensal / consumoMensal) * 100;
+    const areaOcupada = numeroPaineis * painelSelecionado.areaOcupada;
+    const geracaoMensalReais = geracaoMensal * precoKWh;
+    const geracaoAnualReais = geracaoAnual * precoKWh;
     const economiaMensal = Math.min(geracaoMensal, consumoMensal) * precoKWh;
     const economiaAnual = Math.min(geracaoAnual, consumoMensal * 12) * precoKWh;
     const custoTotal = numeroPaineis * painelSelecionado.precoUnidade;
-    const paybackAnos = custoTotal / economiaAnual;
-    const areaOcupada = numeroPaineis * painelSelecionado.areaOcupada;
-    const geracaoExcedenteMensal = Math.max(0, geracaoMensal - consumoMensal);
-    const percentualExcedente =
-      geracaoExcedenteMensal > 0
-        ? (geracaoExcedenteMensal / geracaoMensal) * 100
-        : 0;
+    
+    // Novo cálculo do payback
+    const paybackAnos = geracaoAnualReais > 0 ? custoTotal / geracaoAnualReais : null;
 
     setResultados({
+      geracaoMensalReais,
+      geracaoAnualReais,
       numeroPaineis,
       paineisNecessarios,
       paineisCompraveis,
@@ -123,8 +124,6 @@ export default function CalculadoraSolar() {
       custoTotal,
       paybackAnos,
       areaOcupada,
-      geracaoExcedenteMensal,
-      percentualExcedente,
     });
   }, [consumoMensal, precoKWh, investimento, painelSelecionado]);
 
@@ -471,11 +470,11 @@ export default function CalculadoraSolar() {
                     <div className="flex flex-col justify-center items-center">
                       <DollarSign size={32} className="mb-2" />
                       <h3 className="text-lg font-medium mb-1">
-                        Economia em {painelSelecionado.vidaUtil} Anos
+                        Geracao em {painelSelecionado.vidaUtil} Anos
                       </h3>
                       <div className="text-3xl font-bold">
                         {formatarMoeda(
-                          resultados.economiaAnual * painelSelecionado.vidaUtil
+                          resultados.geracaoAnualReais * painelSelecionado.vidaUtil
                         )}
                       </div>
                     </div>
@@ -521,7 +520,7 @@ export default function CalculadoraSolar() {
                         style={{ color: cores.laranjaSuave }}
                       />
                     }
-                    title="Economia Mensal"
+                    title="Economia Mensal de Energia"
                     value={formatarMoeda(resultados.economiaMensal)}
                   />
                 </div>
@@ -588,39 +587,39 @@ export default function CalculadoraSolar() {
                     </h3>
                     <div className="space-y-3">
                       <div className="flex justify-between py-2 border-b border-gray-100">
-                        <span className="text-gray-600">Economia Mensal:</span>
+                        <span className="text-gray-600">Geração Mensal:</span>
                         <span className="font-medium text-green-600">
-                          {formatarMoeda(resultados.economiaMensal)}
+                          {formatarMoeda(resultados.geracaoMensalReais)}
                         </span>
                       </div>
                       <div className="flex justify-between py-2 border-b border-gray-100">
-                        <span className="text-gray-600">Economia Anual:</span>
+                        <span className="text-gray-600">Geração Anual:</span>
                         <span className="font-medium text-green-600">
-                          {formatarMoeda(resultados.economiaAnual)}
-                        </span>
-                      </div>
-                      <div className="flex justify-between py-2 border-b border-gray-100">
-                        <span className="text-gray-600">
-                          Economia em 5 anos:
-                        </span>
-                        <span className="font-medium text-green-600">
-                          {formatarMoeda(resultados.economiaAnual * 5)}
+                          {formatarMoeda(resultados.geracaoAnualReais)}
                         </span>
                       </div>
                       <div className="flex justify-between py-2 border-b border-gray-100">
                         <span className="text-gray-600">
-                          Economia em 10 anos:
+                          Geração em 5 anos:
                         </span>
                         <span className="font-medium text-green-600">
-                          {formatarMoeda(resultados.economiaAnual * 10)}
+                          {formatarMoeda(resultados.geracaoAnualReais * 5)}
                         </span>
                       </div>
                       <div className="flex justify-between py-2 border-b border-gray-100">
                         <span className="text-gray-600">
-                          Economia em 20 anos:
+                          Geração em 10 anos:
                         </span>
                         <span className="font-medium text-green-600">
-                          {formatarMoeda(resultados.economiaAnual * 20)}
+                          {formatarMoeda(resultados.geracaoAnualReais * 10)}
+                        </span>
+                      </div>
+                      <div className="flex justify-between py-2 border-b border-gray-100">
+                        <span className="text-gray-600">
+                          Geração em 20 anos:
+                        </span>
+                        <span className="font-medium text-green-600">
+                          {formatarMoeda(resultados.geracaoAnualReais * 20)}
                         </span>
                       </div>
                       <div className="flex justify-between py-2">
