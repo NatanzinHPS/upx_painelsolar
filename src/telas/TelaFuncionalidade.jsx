@@ -488,7 +488,7 @@ export default function CalculadoraSolar() {
                     icon={
                       <Sun size={20} style={{ color: cores.amareloVibrante }} />
                     }
-                    title="Painéis Necessários"
+                    title="Número de Painéis"
                     value={resultados.numeroPaineis}
                     suffix="unidades"
                   />
