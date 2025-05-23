@@ -20,10 +20,10 @@ function Navegacao() {
           </li>
           <li>
             <Link
-              to="/funcionalidade"
+              to="/aplicacao"
               className="hover:text-black transition-colors duration-300"
             >
-              Funcionalidade
+              Aplicação
             </Link>
           </li>
           <li>

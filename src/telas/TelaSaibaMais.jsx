@@ -72,8 +72,7 @@ export default function TelaSaibaMais() {
             indústrias. De acordo com a{" "}
             <strong className="text-purple-800">
               Agência Nacional de Energia Elétrica (ANEEL)
-            </strong>
-            , o Brasil ultrapassou, em 2023, a marca de 2 milhões de sistemas
+            </strong> , o Brasil ultrapassou, em 2023, a marca de 2 milhões de sistemas
             solares fotovoltaicos instalados.
           </p>
           <p>
@@ -82,8 +81,7 @@ export default function TelaSaibaMais() {
             e evita a emissão de mais de{" "}
             <strong className="text-purple-800">
               31 milhões de toneladas de CO₂
-            </strong>
-            .
+            </strong> .
           </p>
         </section>
 

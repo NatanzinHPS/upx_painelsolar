@@ -249,7 +249,9 @@ function TelaProjeto() {
         <h1 className="text-2xl font-bold text-center mb-6 text-yellow-300">
           Visualizador de Painéis Solares
         </h1>
-
+        <p className="text-center text-purple-200 mb-4">
+          Compare diferentes tipos de painéis solares e suas eficiências.
+        </p>
         <div className="mb-6">
           <label className="block text-yellow-200 mb-2 font-medium">
             Selecione o tipo de painel:

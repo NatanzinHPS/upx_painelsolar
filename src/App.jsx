@@ -28,7 +28,7 @@ function App() {
           <Route path="projeto" element={<TelaProjeto />} />
           <Route path="saibaMais" element={<TelaSaibaMais />} />
           <Route path="sobre" element={<TelaSobre />} />
-          <Route path="funcionalidade" element={<TelaFuncionalidade />} />
+          <Route path="aplicacao" element={<TelaFuncionalidade />} />
         </Route>
       </Routes>
     </HashRouter>

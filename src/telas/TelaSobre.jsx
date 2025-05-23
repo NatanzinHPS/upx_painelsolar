@@ -1,4 +1,9 @@
 import { useState } from "react";
+import natan from "../images/natan-silva.jpg"
+import joaoH from "../images/joao-henrique.jpg";
+import joaoG from "../images/joao-lira.jpg";
+import enzo from "../images/enzo.jpg";
+import herick from "../images/herick.jpg";
 
 function TelaSobre() {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -8,31 +13,31 @@ function TelaSobre() {
       name: "Natan Henrique",
       role: "",
       description: "",
-      image: "",
+      image: natan,
     },
     {
       name: "Herick Marlon",
       role: "",
       description: "",
-      image: "",
+      image: herick,
     },
     {
       name: "Enzo Castanho",
       role: "",
       description: "",
-      image: "",
+      image: enzo,
     },
     {
       name: "João Gabriel",
       role: "",
       description: "",
-      image: "",
+      image: joaoG,
     },
     {
       name: "João Henrique",
       role: "",
       description: "",
-      image: "",
+      image: joaoH,
     },
   ];
 
