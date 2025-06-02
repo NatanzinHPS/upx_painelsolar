@@ -1,8 +1,8 @@
 # RenovaEnergy ⚡
 Uma aplicação web educacional e interativa para explorar tecnologias de energia solar fotovoltaica.
 
-![React](https://img.shields.io/badge/React-18+-61DAFB?style=flat&logo=react&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0+-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![React](https://img.shields.io/badge/React-19+-61DAFB?style=flat&logo=react&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0+-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
 ![Recharts](https://img.shields.io/badge/Recharts-Data%20Visualization-FF6B6B?style=flat)
 
 ## 🌟 Visão Geral
