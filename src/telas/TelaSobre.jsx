@@ -4,6 +4,7 @@ import joaoH from "../images/joao-henrique.jpg";
 import joaoG from "../images/joao-lira.jpg";
 import enzo from "../images/enzo.jpg";
 import herick from "../images/herick.jpg";
+import grupo from "../images/Grupo.jpeg";
 
 function TelaSobre() {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -11,32 +12,22 @@ function TelaSobre() {
   const teamMembers = [
     {
       name: "Natan Henrique",
-      role: "",
-      description: "",
       image: natan,
     },
     {
       name: "Herick Marlon",
-      role: "",
-      description: "",
       image: herick,
     },
     {
       name: "Enzo Castanho",
-      role: "",
-      description: "",
       image: enzo,
     },
     {
       name: "João Gabriel",
-      role: "",
-      description: "",
       image: joaoG,
     },
     {
       name: "João Henrique",
-      role: "",
-      description: "",
       image: joaoH,
     },
   ];
@@ -79,7 +70,7 @@ function TelaSobre() {
               style={{ backgroundColor: "#FF9933" }}
             >
               <img
-                src="/api/placeholder/500/300"
+                src= {grupo}
                 alt="Grupo trabalhando junto"
                 className="w-full"
               />
@@ -147,21 +138,6 @@ function TelaSobre() {
                   >
                     {member.name}
                   </h3>
-                  <p
-                    className="font-semibold mb-3"
-                    style={{
-                      color: hoveredMember === index ? "#FFCC00" : "#FF9933",
-                    }}
-                  >
-                    {member.role}
-                  </p>
-                  <p
-                    style={{
-                      color: hoveredMember === index ? "white" : "#333333",
-                    }}
-                  >
-                    {member.description}
-                  </p>
                 </div>
               </div>
             ))}
